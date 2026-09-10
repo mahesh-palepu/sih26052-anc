@@ -10,7 +10,7 @@ class embedded hardware (emulated via QEMU/Renode).
 
 ## Status
 - [x] Milestone 1: Signal foundations & dataset (baseline STOI established)
-- [ ] Milestone 2: NLMS adaptive filter core
+- [x] Milestone 2: NLMS adaptive filter core
 - [ ] Milestone 3: AI/ML noise-type-robust model
 - [ ] Milestone 4: Embedded porting & emulation
 - [ ] Milestone 5: Digital twin & system testing
