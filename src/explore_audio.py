@@ -33,5 +33,4 @@ if __name__ == "__main__":
     Path("data/processed").mkdir(parents=True, exist_ok=True)
     
     # Run this once per file you downloaded — swap in your actual filenames
-    load_and_plot("data/raw/helicopter-engine-noise.wav", "stationary_engine")
-    
+    load_and_plot("data/raw/stationary_noise.wav", "stationary_engine")
