@@ -4,3 +4,24 @@ data/raw/*
 __pycache__/
 *.pyc
 data/processed/*.png
+# Python environments
+venv/
+convert_env/
+
+# Raw input data
+data/raw/*
+!data/raw/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Generated preprocessing / model artifacts
+data/processed/*.png
+data/processed/*.wav
+data/processed/*.npy
+data/processed/*.pt
+data/processed/*.onnx
+data/processed/*.tflite
+data/processed/*.data
+data/processed/tf_saved_model/
