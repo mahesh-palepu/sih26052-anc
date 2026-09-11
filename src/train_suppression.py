@@ -28,7 +28,7 @@ X_val_t = torch.from_numpy(X_val)
 Y_val_t = torch.from_numpy(Y_val)
 
 class SuppressionNet(nn.Module):
-    def __init__(self, in_dim=16, hidden=24, out_dim=16):
+    def __init__(self, in_dim=16, hidden=64, out_dim=16):
         super().__init__()
         # hidden=24 is deliberately small — this whole model needs to fit an MCU later,
         # not chase the highest possible accuracy right now
@@ -46,14 +46,14 @@ model = SuppressionNet()
 loss_fn = nn.MSELoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.003)
 
-for epoch in range(200):
+for epoch in range(500):
     optimizer.zero_grad()
     pred = model(X_train_t)
     loss = loss_fn(pred, Y_train_t)
     loss.backward()
     optimizer.step()
 
-    if epoch % 20 == 0:
+    if epoch % 50 == 0:
         with torch.no_grad():
             val_pred = model(X_val_t)
             val_loss = loss_fn(val_pred, Y_val_t)
